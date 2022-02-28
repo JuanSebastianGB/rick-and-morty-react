@@ -1,5 +1,5 @@
 # Configuration of ESLINT With PRETTIER in REACT
-
+## Source: [Youtube Video](https://youtu.be/1tYJqTDkvUQ)
 ### Installing ES lint plugin
 - First in vscode we needo to import ESLINT plugin
 - After must be added ESLINT into vscode configuration json file
