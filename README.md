@@ -9,7 +9,7 @@
         "source.fixAll.eslint": true
     }
 ```
-2. Install Prettier plugin and tse up like follows into the json of vscod config
+2. Install Prettier plugin and set up like follows into the json of vscod config
 ```json
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -113,3 +113,13 @@ npm i eslint-plugin-prettier eslint-config-prettier babel-eslint -D
 ## Auxiliar plugin
 
 - Install one of the best plugins ever: **Error Lens**
+
+# Starting with React
+
+### Installing some libraries to use in the project
+```bash
+ npm i bootstrap
+ npm i @popperjs/core --save
+ npm i sass
+ npm i react-paginate --save
+```
