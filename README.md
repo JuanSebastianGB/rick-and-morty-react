@@ -123,3 +123,6 @@ npm i eslint-plugin-prettier eslint-config-prettier babel-eslint -D
  npm i sass
  npm i react-paginate --save
 ```
+## Api Source
+- [Rick & Morty API](https://rickandmortyapi.com/)
+
