@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# Configuration of ESLINT With PRETTIER in REACT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Installing ES lint plugin
+- First in vscode we needo to import ESLINT plugin
+- After must be added ESLINT into vscode configuration json file
+1. Preferences: Open setting JSON
+```json
+"editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
+```
+2. Install Prettier plugin and tse up like follows into the json of vscod config
+```json
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
+```
+### Installing eslint like development dependency
+```bash
+npm install eslint -D
+```
+### Starting the package with eslint
+```bash
+npx eslint --init
+```
+### Options selected
+  - To check syntax, find problems, and enforce code style
+  - JavaScript modules (import/export)
+  - React
+  - Does your project use TypeScript? ‣ No
+  - Browser
+  - Use a popular style guide
+  - Airbnb: https://github.com/airbnb/javascript
+  - JSON
+  - Would you like to install them now with npm? ‣ Yes
 
-## Available Scripts
+### Generated configuration file
+- .eslintrc.json
 
-In the project directory, you can run:
+### Adding rule to recognice extensions jsx 
+- Inside rules of .eslintrc.json we add
+- [Source](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md)
+```json
+  "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+```
+### Extending to deppendencies of the package
+```json
+"extends":[
+  "plugin:react/recommended",
+  "airbnb",
+  "plugin:jsx-a11y/recommended",
+  "plugin:react-hooks/recommended"
+]
+"plugins":[
+  "react",
+  "react-hooks"
+]
+```
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Install deppendencies to link prettier with eslint like Development dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```shell
+npm i eslint-plugin-prettier eslint-config-prettier babel-eslint -D
+```
+### Add prettier rules inside eslin config file
 
-### `npm test`
+```json
+    "rules": {
+        "prettier/prittier": "error",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ]
+    }
+```
+```json
+    "plugins": [
+        "react",
+        "react-hooks",
+        "prettier"
+    ],
+```
+```json
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "plugin:jsx-a11y/recommended",
+        "plugin:react-hooks/recommended",
+        "prettier"
+    ],
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### At the end is created another file name .prettierrc to handle prettier rules like follows
 
-### `npm run build`
+```json
+{
+  "singleQuote": true,
+  "trailingComa": "none",
+  "endOfLine": "auto",
+  "tabWidth": 2
+}
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Auxiliar plugin
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Install one of the best plugins ever: **Error Lens**
