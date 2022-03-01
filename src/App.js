@@ -29,7 +29,7 @@ function App() {
             <Filters />
           </div>
           <div className="col-8">
-            <Cards results={results} columnsQuantity={4} />
+            <Cards results={results} columnsQuantity={3} />
           </div>
         </div>
       </div>
