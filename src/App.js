@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -6,9 +7,17 @@ import Filters from './components/Filters/Filters';
 import Cards from './components/Cards/Cards';
 
 function App() {
-  const pageNumber = 7;
   const [pageNumber, setPageNumber] = useState(1);
-  const api = `https://rickandmortyapi.com/api/character/?page=${}`;
+  const [fetchedData, updateFetchedData] = useState([]);
+  const { info, results } = fetchedData;
+  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
+  useEffect(() => {
+    // eslint-disable-next-line func-names
+    (async function () {
+      const data = await fetch(api).then((res) => res.json());
+      updateFetchedData(data);
+    })();
+  }, [api]);
   return (
     <div className="App">
       <h1 className="text-center ubuntu my-4">
@@ -20,11 +29,7 @@ function App() {
             <Filters />
           </div>
           <div className="col-8">
-            <div className="row">
-              <Cards />
-              <Cards />
-              <Cards />
-            </div>
+            <Cards results={results} columnsQuantity={4} />
           </div>
         </div>
       </div>
