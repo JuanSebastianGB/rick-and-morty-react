@@ -17,27 +17,27 @@ function Card({ result, columns }) {
           <div className="fs-5">{location.name}</div>
         </div>
       </div>
-      {(() => {
-        if (status === 'Dead') {
-          <div className={`${styles.badge} badge bg-danger position-absolute`}>
-            {status}
-          </div>;
-        } else if (status === 'Alive') {
-          <div className={`${styles.badge} badge bg-success position-absolute`}>
-            {status}
-          </div>;
-        } else {
-          <div
-            className={`${styles.badge} badge bg-secondary position-absolute`}
-          >
-            {status}
-          </div>;
-        }
-      })()}
-
-      <div className={`${styles.badge} badge bg-danger position-absolute`}>
-        {status}
-      </div>
+      {status === 'Dead' ? (
+        <div className={`${styles.badge} badge bg-danger position-absolute`}>
+          {status}
+        </div>
+      ) : (
+        ''
+      )}
+      {status === 'Alive' ? (
+        <div className={`${styles.badge} badge bg-success position-absolute`}>
+          {status}
+        </div>
+      ) : (
+        ''
+      )}
+      {status !== 'Alive' && status !== 'Dead' ? (
+        <div className={`${styles.badge} badge bg-secundary position-absolute`}>
+          {status}
+        </div>
+      ) : (
+        ''
+      )}
     </div>
   );
 }
