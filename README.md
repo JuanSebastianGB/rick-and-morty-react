@@ -1,11 +1,15 @@
 # Summary
 
+[![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/standard/semistandard)
+
+[![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)
+
 React project to practice general skills. And by implementing another functionalities not directly related with react such as:
 - [x] CI/CD
 - [ ] Docker
-- [ ] TDD
+- [x] TDD
 - [ ] Documentation
-- [ ] Clean code and so on
+- [x] Clean code and so on
 
 ## Working Project:
 
