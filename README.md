@@ -15,7 +15,7 @@ React project to practice general skills. And by implementing another functional
 
 - [DEMO](https://juansebastiangb.github.io/rick-and-morty-react/) 👁️‍🗨️
 
-## Auxiliar plugin
+## Aux plugin
 
 - Install one of the best plugins ever: **Error Lens**
 

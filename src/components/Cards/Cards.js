@@ -1,12 +1,11 @@
-/* eslint-disable react/prop-types */
-import React from 'react';
 import Card from '../Card/Card';
+import PropTypes from 'prop-types';
 
 function Cards({ results, columnsQuantity }) {
   let display;
   if (results) {
-    display = results.map((result) => (
-      <Card result={result} columns={columnsQuantity} />
+    display = results.map((result, key) => (
+      <Card key={key} result={result} columns={columnsQuantity} />
     ));
   } else {
     display = 'Not found';
@@ -14,5 +13,10 @@ function Cards({ results, columnsQuantity }) {
 
   return <div className="row">{display}</div>;
 }
+
+Cards.propTypes = {
+  results: PropTypes.array,
+  columnsQuantity: PropTypes.number,
+};
 
 export default Cards;

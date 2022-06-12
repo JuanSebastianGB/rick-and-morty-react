@@ -1,6 +1,5 @@
-/* eslint-disable react/prop-types */
-import React from 'react';
 import styles from './Card.module.scss';
+import PropTypes from 'prop-types';
 
 function Card({ result, columns }) {
   const { image, name, status, location } = result;
@@ -42,4 +41,8 @@ function Card({ result, columns }) {
   );
 }
 
+Card.propTypes = {
+  result: PropTypes.object,
+  columns: PropTypes.number,
+};
 export default Card;

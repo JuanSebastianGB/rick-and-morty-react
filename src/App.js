@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
@@ -7,9 +6,10 @@ import Filters from './components/Filters/Filters';
 import Cards from './components/Cards/Cards';
 
 function App() {
+  // eslint-disable-next-line no-unused-vars
   const [pageNumber, setPageNumber] = useState(1);
   const [fetchedData, updateFetchedData] = useState([]);
-  const { info, results } = fetchedData;
+  const { results } = fetchedData;
   const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
   useEffect(() => {
     // eslint-disable-next-line func-names
