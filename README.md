@@ -14,7 +14,6 @@ React project to practice general skills. And by implementing another functional
 ## Working Project:
 
 - [DEMO](https://juansebastiangb.github.io/rick-and-morty-react/) 👁️‍🗨️
-## Main react Source: [Youtube Video](https://youtu.be/1tYJqTDkvUQ)
 
 ## Auxiliar plugin
 
