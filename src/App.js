@@ -8,7 +8,7 @@ import usePagination from './hooks/usePagination';
 
 function App() {
   const { pageNumber } = usePagination();
-  const url = `https://rickandmortyapi.com/api/characters/?page=${pageNumber}`;
+  const url = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
   const { results } = useData(url);
   return (
     <div className='App'>
