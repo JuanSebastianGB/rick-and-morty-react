@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
+import { helpHttp } from '../helpers/helpHttp';
 
 const useData = (url = '') => {
   const [fetchedData, updateFetchedData] = useState([]);
   const { results } = fetchedData;
 
+  helpHttp();
   useEffect(() => {
     (async function () {
-      const data = await fetch(url).then(res => res.json());
+      const data = await helpHttp().get(url);
+      console.log(data);
       updateFetchedData(data);
     })();
   }, [url]);
