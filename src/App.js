@@ -1,22 +1,15 @@
-import { useState, useEffect } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
 import Filters from './components/Filters/Filters';
 import Cards from './components/Cards/Cards';
+import useData from './hooks/useData';
+import usePagination from './hooks/usePagination';
 
 function App() {
-  // eslint-disable-next-line no-unused-vars
-  const [pageNumber, setPageNumber] = useState(1);
-  const [fetchedData, updateFetchedData] = useState([]);
-  const { results } = fetchedData;
-  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
-  useEffect(() => {
-    (async function () {
-      const data = await fetch(api).then(res => res.json());
-      updateFetchedData(data);
-    })();
-  }, [api]);
+  const { pageNumber } = usePagination();
+  const url = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
+  const { results } = useData(url);
   return (
     <div className='App'>
       <h1 className='text-center ubuntu my-4'>
