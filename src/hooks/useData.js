@@ -1,20 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setResults } from '../actions/resultsActions';
 import { helpHttp } from '../helpers/helpHttp';
 
 const useData = (url = '') => {
-  const [fetchedData, updateFetchedData] = useState([]);
-  const { results } = fetchedData;
-
-  helpHttp();
+  const dispatch = useDispatch();
   useEffect(() => {
     (async function () {
       const data = await helpHttp().get(url);
-      console.log(data);
-      updateFetchedData(data);
+      dispatch(setResults(data));
     })();
   }, [url]);
-
-  return { results };
 };
 
 export default useData;

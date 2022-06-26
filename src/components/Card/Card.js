@@ -5,15 +5,15 @@ function Card({ result, columns }) {
   const { image, name, status, location } = result;
   return (
     <div
-      className={`col-${columns} position-relative ${styles.card}`}
+      className={`col-xl-2 col-lg-3 col-md-4 col-sm-6 position-relative ${styles.card}`}
       key={result.id}
     >
-      <img src={image} alt="" className={`img-fluid ${styles.img}`} />
-      <div style={{ padding: '10px' }} className="content">
-        <div className="fs-4 fw-bold mb-4">{name}</div>
-        <div className="">
-          <div className="fs-6">Last location</div>
-          <div className="fs-5">{location.name}</div>
+      <img src={image} alt='' className={`img-fluid ${styles.img}`} />
+      <div style={{ padding: '10px' }} className='content'>
+        <div className='fs-4 fw-bold mb-4'>{name}</div>
+        <div className=''>
+          <div className='fs-6'>Last location</div>
+          <div className='fs-5'>{location.name}</div>
         </div>
       </div>
       {status === 'Dead' ? (
