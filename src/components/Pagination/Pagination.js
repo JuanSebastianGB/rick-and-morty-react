@@ -1,8 +1,8 @@
 import ReactPaginate from 'react-paginate';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPage } from '../../actions/paginationActions';
-import { useEffect, useState } from 'react';
 import './pagination.scss';
+import useWidthResize from '../../hooks/useWidthResize';
 
 // Example items, to simulate fetching from another resources.
 
@@ -13,16 +13,8 @@ function Pagination() {
   try {
     pages = results.results.info.pages;
   } catch (err) {}
-  console.log(pages);
-  const [width, setWidth] = useState(window.innerWidth);
-  const updateDimensions = () => {
-    setWidth(window.innerWidth);
-  };
 
-  useEffect(() => {
-    window.addEventListener('resize', updateDimensions);
-    return () => window.removeEventListener('resize', updateDimensions);
-  }, []);
+  const { width } = useWidthResize();
 
   const handlePageClick = ({ selected }) => {
     console.log(`You clicked page ${selected + 1}`);
