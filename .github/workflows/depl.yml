@@ -15,8 +15,8 @@ jobs:
         run: |
           npm install --force
           npm run build
-      - name: Run Tests
-        run: npm run ci:test
+      # - name: Run Tests
+      #   run: npm run ci:test
       - name: Make deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
