@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const usePagination = () => {
-  const [pageNumber, setPage] = useState(1);
-  return { pageNumber, setPage };
+  const pageNumber = useSelector(state => state.page);
+  return { pageNumber };
 };
 
 export default usePagination;
